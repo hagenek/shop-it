@@ -1,7 +1,15 @@
 <div class="headline">
-  <h1>
-    A pre-rendered Jamstack site template using Angular 12, Scully, and Netlify!
-  </h1>
-  <h3>Here there will be a e-commerce store!</h3>
-  <img src="https://bit.ly/2Rg3nrg" />
+  <h3>Blog posts:</h3>
+  <ul>
+    <li *ngFor="let page of links$ | async">{{ page.route }}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let page of links$ | async">
+      {{ page.route }} {{ page.arbitraryValue }}
+      <span *ngFor="let arrayItem of page.arbitraryArray">
+        {{ arrayItem }}
+      </span>
+    </li>
+  </ul>
 </div>
